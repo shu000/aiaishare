@@ -1,6 +1,6 @@
 import { selector, useRecoilValue } from 'recoil';
-import { loginUserState } from '../../../auth/stores/stores';
-import { Bill } from '../../models/bill';
+import { loginUserState } from '../../auth/stores/stores';
+import { Bill } from '../models/bill';
 import { billsQuery } from './useBillsQuery';
 
 const totalAmountQuery = selector<Bill['amount']>({

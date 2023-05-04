@@ -16,7 +16,7 @@ const MoneyInput: FC<Props> = memo(({ className, id, value, onChange }) => {
             }
 
             // 数字以外を除く
-            const numericValue = event.target.value.replaceAll(/[^0123456789]+/g, '');
+            const numericValue = event.target.value.replaceAll(/[^\d]+/g, '');
             if (numericValue === '') {
                 onChange('');
                 return;

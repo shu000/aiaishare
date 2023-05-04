@@ -2,7 +2,6 @@ import { Bill } from '../models/bill';
 
 export const getBills: () => Promise<Bill[]> = () => {
     return new Promise((resolve, reject) => {
-        console.log('api');
         setTimeout(() => {
             // reject(new Error('Failed to getBills'));
             resolve([

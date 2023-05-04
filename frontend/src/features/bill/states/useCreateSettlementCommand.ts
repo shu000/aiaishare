@@ -1,13 +1,13 @@
 import { useRecoilCallback } from 'recoil';
-import { postSettlement } from '../../api/postSettlement';
-import { billsQueryRefresher } from '../queries/useBillsQuery';
+import { postSettlement } from '../api/postSettlement';
+import { billsQueryRequestIdState } from './useBillsQuery';
 
 type CreateSettlementCommand = () => Promise<void>;
 
 export const useCreateSettlementCommand = (): CreateSettlementCommand => {
     return useRecoilCallback(({ set }) => {
         const refreshBillsQuery = () => {
-            set(billsQueryRefresher, (id) => id + 1);
+            set(billsQueryRequestIdState, (id) => id + 1);
         };
 
         return async () => {

@@ -1,8 +1,8 @@
 import { atom, selector, useRecoilValue } from 'recoil';
-import { getBills } from '../../api/getBills';
-import { Bill } from '../../models/bill';
+import { getBills } from '../api/getBills';
+import { Bill } from '../models/bill';
 
-export const billsQueryRefresher = atom({
+export const billsQueryRequestIdState = atom({
     key: 'billsQueryRefresher',
     default: 0,
 });
@@ -10,11 +10,11 @@ export const billsQueryRefresher = atom({
 export const billsQuery = selector<Bill[]>({
     key: 'billsQuery',
     get: async ({ get }) => {
-        get(billsQueryRefresher); // refresh when the refresher is updated
+        get(billsQueryRequestIdState); // refresh when the refresher is updated
         return getBills();
     },
 });
 
-export const useBillsQuery = (): Bill[] => {
+export const useBillsQueryValue = (): Bill[] => {
     return useRecoilValue(billsQuery);
 };

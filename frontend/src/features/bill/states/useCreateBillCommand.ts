@@ -1,13 +1,13 @@
 import { useRecoilCallback } from 'recoil';
-import { PostBillPayload, postBill } from '../../api/postBill';
-import { billsQueryRefresher } from '../queries/useBillsQuery';
+import { PostBillPayload, postBill } from '../api/postBill';
+import { billsQueryRequestIdState } from './useBillsQuery';
 
 type CreateBillCommand = (payload: PostBillPayload) => Promise<void>;
 
 export const useCreateBillCommand = (): CreateBillCommand => {
     return useRecoilCallback(({ set }) => {
         const refreshBillsQuery = () => {
-            set(billsQueryRefresher, (id) => id + 1);
+            set(billsQueryRequestIdState, (id) => id + 1);
         };
 
         return async (payload: PostBillPayload) => {

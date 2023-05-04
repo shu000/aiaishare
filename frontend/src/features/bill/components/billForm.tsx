@@ -3,7 +3,7 @@ import { Button } from '../../../components/button';
 import { MoneyInput } from '../../../components/moneyInput';
 import { TextInput } from '../../../components/textInput';
 import { useFormState } from '../../../hooks/useFormState';
-import { useCreateBillCommand } from '../states/commends/useCreateBillCommand';
+import { useCreateBillCommand } from '../states/useCreateBillCommand';
 
 const BillForm: FC = memo(() => {
     const createBill = useCreateBillCommand();

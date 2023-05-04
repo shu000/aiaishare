@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import { Yen } from '../../../components/yen';
-import { useTotalAmountQuery } from '../states/queries/useTotalAmountQuery';
+import { useTotalAmountQuery } from '../states/useTotalAmountQuery';
 
 const BillTotal: FC = memo(() => {
     const total = useTotalAmountQuery();

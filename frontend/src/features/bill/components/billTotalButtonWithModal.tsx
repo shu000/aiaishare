@@ -3,8 +3,8 @@ import { Button } from '../../../components/button';
 import { Modal } from '../../../components/modal';
 import { Yen } from '../../../components/yen';
 import { useModalState } from '../../../hooks/useModalState';
-import { useCreateSettlementCommand } from '../states/commends/useCreateSettlementCommand';
-import { useTotalAmountQuery } from '../states/queries/useTotalAmountQuery';
+import { useCreateSettlementCommand } from '../states/useCreateSettlementCommand';
+import { useTotalAmountQuery } from '../states/useTotalAmountQuery';
 import { BillTotalButton } from './billTotalButton';
 
 const BillTotalButtonWithModal: FC = memo(() => {

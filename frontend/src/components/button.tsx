@@ -18,7 +18,7 @@ const Button: FC<Props> = memo(({ className, children, disabled, onClick, varian
     }, [onClick, disabled]);
 
     // FIXME tailwindのsuggenstionが効かない variantが増えたらだるい
-    const baseClassName = `rounded-md py-1 px-2 text-lg text-white shadow ${className}`;
+    const baseClassName = `rounded-md py-1 px-2 text-lg shadow ${className}`;
     const normalClassName = 'bg-slate-500 text-white';
     const cancelClassName = 'text-slate-500';
 

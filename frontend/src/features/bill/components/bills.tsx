@@ -1,11 +1,11 @@
 import { FC, memo } from 'react';
 import { useLoginUser } from '../../auth/stores/hooks';
-import { useBillsQuery } from '../states/queries/useBillsQuery';
+import { useBillsQueryValue } from '../states/useBillsQuery';
 import { BillBaloon } from './billBaloon';
 
 const Bills: FC = memo(() => {
     const loginUser = useLoginUser();
-    const bills = useBillsQuery();
+    const bills = useBillsQueryValue();
 
     return (
         <div>
